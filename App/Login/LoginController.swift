@@ -9,22 +9,26 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class LoginController: UIViewController {
     
     let emailTextField: UITextField = {
         let e = UITextField()
         
         let attributedPlaceholder = NSAttributedString(string: "Email", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
+        e.textColor = .white
         e.attributedPlaceholder = attributedPlaceholder
-        e.backgroundColor = GREEN_THEME
+        e.setBottomBorder(backGroundColor: GREEN_THEME, borderColor: .white)
         return e
     }()
     
     let passwordTextField: UITextField = {
         let p = UITextField()
         let attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
+        p.textColor = .white
+        p.isSecureTextEntry = true
         p.attributedPlaceholder = attributedPlaceholder
-        p.backgroundColor = GREEN_THEME
+        p.setBottomBorder(backGroundColor: GREEN_THEME, borderColor: .white)
+
         return p
     }()
     
@@ -32,7 +36,8 @@ class ViewController: UIViewController {
         let l = UIButton(type: .system)
         l.setTitleColor(.white, for: .normal)
         l.setTitle("Log In", for: .normal)
-        l.backgroundColor = GREEN_THEME
+        l.layer.cornerRadius = 10
+        l.backgroundColor = UIColor.rgb(r:89, g:156, b:120)
         return l
     }()
     let forgotPassword: UIButton = {
@@ -43,7 +48,7 @@ class ViewController: UIViewController {
         return f
     }()
     let haveAccountButton: UIButton = {
-        let color = UIColor(red: 89/255, green: 156/256, blue: 120/255, alpha: 1)
+        let color = UIColor.rgb(r:89, g:156, b:120)
         let h = UIButton(type: .system)
         let font = UIFont.systemFont(ofSize: 16)
         h.backgroundColor = GREEN_THEME
@@ -52,7 +57,7 @@ class ViewController: UIViewController {
         attributedTitle.append(NSAttributedString(string: "Sign Up", attributes:
             [NSAttributedString.Key.foregroundColor: UIColor.white,
              NSAttributedString.Key.font: font]))
-        
+        h.addTarget(self, action: #selector(signupAction), for: .touchUpInside)
         h.setAttributedTitle(attributedTitle, for: .normal)
         return h
         
@@ -67,11 +72,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = GREEN_THEME
+        
+        navigationController?.isNavigationBarHidden = true
         setupTextFieldComponents()
         setupLoginButton()
         setupHaveAccountButton()
         setupForgotPasswordButton()
 
+    }
+    
+    @objc func signupAction(){
+        let signupController = SignupController()
+        navigationController?.pushViewController(signupController, animated: true)
+    
     }
     
     fileprivate func setupTextFieldComponents(){

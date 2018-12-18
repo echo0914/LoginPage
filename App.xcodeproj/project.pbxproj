@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0EB19A2021C750720082A4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A1F21C750720082A4CA /* AppDelegate.swift */; };
-		0EB19A2221C750720082A4CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A2121C750720082A4CA /* ViewController.swift */; };
+		0EB19A2221C750720082A4CA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A2121C750720082A4CA /* LoginController.swift */; };
 		0EB19A2721C750740082A4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB19A2621C750740082A4CA /* Assets.xcassets */; };
 		0EB19A2A21C750740082A4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB19A2821C750740082A4CA /* LaunchScreen.storyboard */; };
 		0EB19A3521C750740082A4CA /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A3421C750740082A4CA /* AppTests.swift */; };
 		0EB19A4021C750740082A4CA /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A3F21C750740082A4CA /* AppUITests.swift */; };
 		0EB19A4F21C759A60082A4CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A4E21C759A60082A4CA /* Constants.swift */; };
 		0EB19A5121C84F720082A4CA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A5021C84F720082A4CA /* Extension.swift */; };
+		0EB19A5721C85A690082A4CA /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB19A5621C85A690082A4CA /* SignupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		0EB19A1C21C750720082A4CA /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB19A1F21C750720082A4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0EB19A2121C750720082A4CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EB19A2121C750720082A4CA /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0EB19A2621C750740082A4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB19A2921C750740082A4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB19A2B21C750740082A4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		0EB19A4121C750740082A4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB19A4E21C759A60082A4CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0EB19A5021C84F720082A4CA /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0EB19A5621C85A690082A4CA /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,9 @@
 		0EB19A1E21C750720082A4CA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				0EB19A5521C85A390082A4CA /* Login */,
+				0EB19A5321C85A1F0082A4CA /* Signup */,
 				0EB19A1F21C750720082A4CA /* AppDelegate.swift */,
-				0EB19A2121C750720082A4CA /* ViewController.swift */,
 				0EB19A4D21C7597A0082A4CA /* Utils */,
 				0EB19A2621C750740082A4CA /* Assets.xcassets */,
 				0EB19A2821C750740082A4CA /* LaunchScreen.storyboard */,
@@ -134,6 +137,22 @@
 				0EB19A5021C84F720082A4CA /* Extension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0EB19A5321C85A1F0082A4CA /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				0EB19A5621C85A690082A4CA /* SignupController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		0EB19A5521C85A390082A4CA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0EB19A2121C750720082A4CA /* LoginController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EB19A2221C750720082A4CA /* ViewController.swift in Sources */,
+				0EB19A2221C750720082A4CA /* LoginController.swift in Sources */,
 				0EB19A2021C750720082A4CA /* AppDelegate.swift in Sources */,
 				0EB19A4F21C759A60082A4CA /* Constants.swift in Sources */,
+				0EB19A5721C85A690082A4CA /* SignupController.swift in Sources */,
 				0EB19A5121C84F720082A4CA /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
